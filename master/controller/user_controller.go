@@ -50,21 +50,6 @@ func (controller *UserControllerImpl) FindAll(w http.ResponseWriter, r *http.Req
 
 	serv := controller.UserService.FindAll(context.Background())
 	myTemplate.ExecuteTemplate(w, "indexUser", serv)
-	//var filepath = path.Join("view", "users_show.html")
-	//tmpl, err := template.ParseFiles(filepath)
-	//if err != nil {
-	//	panic(err)
-	//}
-	//db := model.GetConnect()
-	//UserRepo := repository.NewUsersRepository()
-	//userService := service.NewUsersService(UserRepo, db)
-	//UserResponses := userService.FindAll(context.Background())
-	//datas := helperMain.StructSliceToMap_Users(UserResponses)
-	//err1 := tmpl.Execute(w, datas)
-	//if err1 != nil {
-	//	http.Error(w, err.Error(), http.StatusInternalServerError)
-	//}
-	//fmt.Println(UserResponses)
 }
 
 func (controller *UserControllerImpl) FindById(w http.ResponseWriter, r *http.Request, param httprouter.Params) {
