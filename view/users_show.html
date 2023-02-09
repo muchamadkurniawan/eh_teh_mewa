@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DATA USER</title>
+</head>
+<body>
+<a href="/insert"> tambah baru </a>
+<table>
+    <tr>
+        <td>id user</td>
+        <td>username user</td>
+        <td>password user</td>
+        <td>update</td>
+        <td>delete</td>
+    </tr>
+    {{ range . }}
+        <tr>
+            <td>{{ .id }}</td>
+            <td> {{ .username }} </td>
+            <td>{{ .password }} </td>
+            <td>
+                <a href="/showKasir?nip={{ .nip }}">show</a>
+            </td>
+            <td>
+                <a href="/deleteKasir?nip={{ .nip }}">delete</a>
+            </td>
+        </tr>
+    {{ end }}
+</table>
+</body>
+</html>
